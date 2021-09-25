@@ -6,4 +6,5 @@ urlpatterns = [
     path('api/auth/', include('api.auth.urls')),
     path('api/items/', include('api.items.urls')),
     path('api/rights/', include('api.rights.urls')),
+    path('api/orders/', include('api.orders.urls')),
 ]

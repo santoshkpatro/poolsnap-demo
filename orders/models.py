@@ -31,6 +31,9 @@ class Order(models.Model):
     discount = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     status = models.CharField(max_length=20, default='initiated', choices=ORDER_STATUS)
 
+    payment_id = models.CharField(max_length=50, blank=True, null=True)
+    transaction_id = models.CharField(max_length=50, blank=True, null=True)
+
     is_active = models.BooleanField(default=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
