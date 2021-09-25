@@ -16,11 +16,41 @@ const routes = [
         component: () =>
             import(/* webpackChunkName: "about" */ '../views/About.vue'),
     },
+    {
+        path: '/auth/login',
+        name: 'Login',
+        component: () => import('../views/auth/Login.vue'),
+    },
+    {
+        path: '/inventory',
+        name: 'Inventory',
+        meta: { requiresAuth: true },
+        component: () => import('../views/Inventory.vue'),
+    },
 ]
 
 const router = createRouter({
     history: createWebHistory(process.env.BASE_URL),
     routes,
+})
+
+router.beforeEach((to, from, next) => {
+    const loggedIn = localStorage.getItem('user')
+
+    if (to.matched.some(record => record.meta.requiresAuth)) {
+        // this route requires auth, check if logged in
+        // if not, redirect to login page.
+        if (!loggedIn) {
+            next({
+                path: '/auth/login',
+                query: { redirect: to.fullPath },
+            })
+        } else {
+            next()
+        }
+    } else {
+        next() // make sure to always call next()!
+    }
 })
 
 export default router
