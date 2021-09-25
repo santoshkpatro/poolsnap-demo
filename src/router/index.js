@@ -26,6 +26,20 @@ const routes = [
         name: 'Inventory',
         meta: { requiresAuth: true },
         component: () => import('../views/Inventory.vue'),
+        children: [
+            {
+                path: 'uploads/',
+                name: 'Uploads',
+                meta: { requiresAuth: true },
+                component: () => import('../views/inventory/Uploads.vue'),
+            },
+            {
+                path: 'rights/',
+                name: 'Rights',
+                meta: { requiresAuth: true },
+                component: () => import('../views/inventory/Rights.vue'),
+            },
+        ],
     },
 ]
 
