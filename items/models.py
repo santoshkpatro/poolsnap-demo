@@ -27,4 +27,4 @@ class Item(models.Model):
         db_table = 'items'
 
     def __str__(self) -> str:
-        return str(self.id)
+        return str(self.id) + ' by ' + self.owner.name
