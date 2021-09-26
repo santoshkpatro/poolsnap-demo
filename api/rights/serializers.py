@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from rights.models import Right
+from rights.models import License
 from items.models import Item
 from category.models import Category
 from accounts.models import User
@@ -8,7 +8,7 @@ from accounts.models import User
 class OwnerSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['name', 'profile_url']
+        fields = ['username', 'name', 'profile_url']
 
 
 class CategorySerializer(serializers.ModelSerializer):
@@ -26,9 +26,9 @@ class ItemSerializer(serializers.ModelSerializer):
         fields = ['id', 'owner', 'category', 'resource_url']
 
 
-class RightSerializer(serializers.ModelSerializer):
+class LicenseSerializer(serializers.ModelSerializer):
     item = ItemSerializer(read_only=True)
 
     class Meta:
-        model = Right
+        model = License
         fields = ['id', 'item', 'valid_upto', 'created_at']

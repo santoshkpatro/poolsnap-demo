@@ -4,9 +4,9 @@ from django.conf import settings
 from items.models import Item
 
 
-class Right(models.Model):
+class License(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='rights')
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='licenses')
     item = models.ForeignKey(Item, on_delete=models.CASCADE)
     valid_upto = models.DateField()
 
@@ -16,7 +16,7 @@ class Right(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
-        db_table = 'rights'
+        db_table = 'licenses'
 
     def __str__(self) -> str:
         return str(self.id)

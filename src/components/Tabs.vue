@@ -16,9 +16,9 @@
             <router-link
                 class="nav-link"
                 :to="{
-                    name: 'Rights',
+                    name: 'Licenses',
                 }"
-                >Rights</router-link
+                >Licenses</router-link
             >
         </li>
         <li class="nav-item">

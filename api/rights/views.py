@@ -1,12 +1,12 @@
 from rest_framework import generics, permissions
-from rights.models import Right
-from .serializers import RightSerializer
+from rights.models import License
+from .serializers import LicenseSerializer
 
 
-class UserRightList(generics.ListAPIView):
-    serializer_class = RightSerializer
-    queryset = Right.objects.all()
+class LicenceList(generics.ListAPIView):
+    serializer_class = LicenseSerializer
+    queryset = License.objects.all()
     permission_classes = [permissions.IsAuthenticated]
 
     def get_queryset(self):
-        return self.request.user.rights.all()
+        return self.request.user.licenses.all()

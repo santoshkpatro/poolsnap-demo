@@ -65,7 +65,9 @@
                     </li>
                     <li class="nav-item" v-if="!loggedIn">
                         <router-link :to="{ name: 'Login' }">
-                            <button class="btn btn-sm btn-light">Login</button>
+                            <button class="btn btn-sm btn-light mt-1">
+                                Login
+                            </button>
                         </router-link>
                     </li>
                     <li class="nav-item" v-if="loggedIn">

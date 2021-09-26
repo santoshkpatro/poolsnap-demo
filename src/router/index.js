@@ -40,10 +40,10 @@ const routes = [
                 component: () => import('../views/inventory/Uploads.vue'),
             },
             {
-                path: 'rights/',
-                name: 'Rights',
+                path: 'licenses/',
+                name: 'Licenses',
                 meta: { requiresAuth: true },
-                component: () => import('../views/inventory/Rights.vue'),
+                component: () => import('../views/inventory/Licenses.vue'),
             },
         ],
     },

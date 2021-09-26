@@ -3,5 +3,5 @@ from .import views
 
 
 urlpatterns = [
-    path('user/', views.UserRightList.as_view(), name='user-rights')
+    path('', views.LicenceList.as_view(), name='user-licenses')
 ]

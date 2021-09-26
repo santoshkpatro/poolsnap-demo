@@ -6,6 +6,7 @@ from rest_framework.views import APIView
 from rest_framework.parsers import MultiPartParser
 from rest_framework.response import Response
 from items.models import Item
+from category.models import Category
 from api.permissions import IsOwnerOrReadOnly
 from items.utils import handle_local_upload
 from .serializers import ItemSerializer
@@ -19,12 +20,22 @@ class ItemList(generics.ListCreateAPIView):
     def get_queryset(self):
         items = super().get_queryset()
         username = self.request.query_params.get('username')
+        category = self.request.query_params.get('category')
+
         if username is not None:
             try:
                 user = User.objects.get(username=username)
                 items = items.filter(owner=user)
             except User.DoesNotExist:
                 raise Http404
+
+        if category is not None:
+            try:
+                category = Category.objects.get(name=category)
+                items = items.filter(category=category)
+            except Category.DoesNotExist:
+                raise Http404
+
         return items.order_by('created_at')
 
     def perform_create(self, serializer):
