@@ -7,9 +7,6 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
-    "@uppy/vue": "^0.4.1",
-    "@uppy/webcam": "^2.0.2",
-    "@uppy/xhr-upload": "^2.0.3",
     "axios": "^0.21.4",
     "bootstrap": "^5.1.1",
     "core-js": "^3.6.5",
