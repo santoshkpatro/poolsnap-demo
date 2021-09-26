@@ -1,6 +1,6 @@
 <template>
     <div class="card position-relative">
-        <img :src="item.resource_url" class="card-img-top" alt="NA" />
+        <img :src="item.resource_url" class="card-img-top rounded" alt="NA" />
         <div class="overlay">
             <div class="top">
                 <a href="">

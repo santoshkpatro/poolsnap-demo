@@ -2,7 +2,7 @@
     <div class="container">
         <!-- <img alt="Vue logo" src="../assets/logo.png" /> -->
         <div class="row mt-5">
-            <div class="col-4 my-3" v-for="item in items" :key="item.id">
+            <div class="col-4" v-for="item in items" :key="item.id">
                 <Item :item="item" />
             </div>
         </div>

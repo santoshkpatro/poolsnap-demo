@@ -17,6 +17,12 @@ const routes = [
             import(/* webpackChunkName: "about" */ '../views/About.vue'),
     },
     {
+        path: '/items/:item_id',
+        name: 'Items',
+        props: true,
+        component: () => import('../views/Items.vue'),
+    },
+    {
         path: '/auth/login',
         name: 'Login',
         component: () => import('../views/auth/Login.vue'),
@@ -26,6 +32,12 @@ const routes = [
         name: 'Upload',
         meta: { requiresAuth: true },
         component: () => import('../views/Upload.vue'),
+    },
+    {
+        path: '/license/:license_id',
+        name: 'License',
+        meta: { requiresAuth: true },
+        component: () => import('../views/License.vue'),
     },
     {
         path: '/inventory',

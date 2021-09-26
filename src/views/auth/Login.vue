@@ -18,7 +18,7 @@
                     placeholder="name@example.com"
                     v-model="credentials.username"
                 />
-                <label for="floatingInput">Email address</label>
+                <label for="floatingInput">username or email</label>
             </div>
             <div class="form-floating">
                 <input
@@ -28,9 +28,9 @@
                     placeholder="Password"
                     v-model="credentials.password"
                 />
-                <label for="floatingPassword">Password</label>
+                <label for="floatingPassword">password</label>
             </div>
-            <button class="w-100 btn btn-lg btn-primary" type="submit">
+            <button class="w-100 btn btn-lg btn-dark" type="submit">
                 Sign in
             </button>
         </form>

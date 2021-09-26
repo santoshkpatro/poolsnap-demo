@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from rights.models import License
+from licenses.models import License
 from items.models import Item
 from category.models import Category
 from accounts.models import User

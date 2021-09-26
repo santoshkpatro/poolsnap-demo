@@ -1,5 +1,5 @@
 from rest_framework import generics, permissions
-from rights.models import License
+from licenses.models import License
 from .serializers import LicenseSerializer
 
 

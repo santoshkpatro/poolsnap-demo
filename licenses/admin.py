@@ -3,5 +3,5 @@ from .models import License
 
 
 @admin.register(License)
-class RightAdmin(admin.ModelAdmin):
+class LicenseAdmin(admin.ModelAdmin):
     list_display = ('id', 'user', 'valid_upto', 'created_at')
