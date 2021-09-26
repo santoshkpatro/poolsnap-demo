@@ -47,6 +47,12 @@ const routes = [
             },
         ],
     },
+    {
+        path: '/:username',
+        name: 'Profile',
+        props: true,
+        component: () => import('../views/Profile.vue'),
+    },
 ]
 
 const router = createRouter({

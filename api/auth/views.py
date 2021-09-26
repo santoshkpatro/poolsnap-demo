@@ -7,9 +7,9 @@ from .serializers import UserLoginSerializer
 
 @api_view(['POST'])
 def login_view(request):
-    email = request.data['email']
+    username = request.data['username']
     password = request.data['password']
-    user = authenticate(username=email, password=password)
+    user = authenticate(username=username, password=password)
     if user is not None:
         if user.is_active:
             serializer = UserLoginSerializer(user)

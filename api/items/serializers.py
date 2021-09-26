@@ -7,7 +7,7 @@ from category.models import Category
 class OwnerSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['name', 'profile_url']
+        fields = ['username', 'name', 'profile_url']
 
 
 class CategorySerializer(serializers.ModelSerializer):

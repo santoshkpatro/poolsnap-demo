@@ -12,11 +12,11 @@
 
             <div class="form-floating">
                 <input
-                    type="email"
+                    type="text"
                     class="form-control"
                     id="floatingInput"
                     placeholder="name@example.com"
-                    v-model="credentials.email"
+                    v-model="credentials.username"
                 />
                 <label for="floatingInput">Email address</label>
             </div>
@@ -42,7 +42,7 @@ export default {
     data() {
         return {
             credentials: {
-                email: null,
+                username: null,
                 password: null,
             },
             error: null,

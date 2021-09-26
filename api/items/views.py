@@ -1,4 +1,5 @@
 import os
+from accounts.models import User
 from django.http import Http404
 from rest_framework import generics, permissions, status
 from rest_framework.views import APIView
@@ -14,6 +15,17 @@ class ItemList(generics.ListCreateAPIView):
     serializer_class = ItemSerializer
     queryset = Item.objects.all()
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+
+    def get_queryset(self):
+        items = super().get_queryset()
+        username = self.request.query_params.get('username')
+        if username is not None:
+            try:
+                user = User.objects.get(username=username)
+                items = items.filter(owner=user)
+            except User.DoesNotExist:
+                raise Http404
+        return items.order_by('created_at')
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
