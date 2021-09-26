@@ -7,10 +7,16 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@uppy/vue": "^0.4.1",
+    "@uppy/webcam": "^2.0.2",
+    "@uppy/xhr-upload": "^2.0.3",
     "axios": "^0.21.4",
     "bootstrap": "^5.1.1",
     "core-js": "^3.6.5",
+    "filepond": "^4.29.1",
+    "filepond-plugin-image-preview": "^4.6.10",
     "vue": "^3.0.0",
+    "vue-filepond": "^7.0.0",
     "vue-router": "^4.0.0-0",
     "vuex": "^4.0.0-0"
   },
