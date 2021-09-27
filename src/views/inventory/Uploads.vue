@@ -1,6 +1,5 @@
 <template>
-    <h1>Uploads</h1>
-    <div class="row">
+    <div class="row mt-3">
         <div class="col-4" v-for="item in uploads" :key="item.id">
             <UploadItem @itemDeleted="handleUpdate" :item="item" />
         </div>
