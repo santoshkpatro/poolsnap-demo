@@ -22,7 +22,9 @@
             >
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Orders</a>
+            <router-link class="nav-link" :to="{ name: 'PreviousOrders' }"
+                >Orders</router-link
+            >
         </li>
     </ul>
 </template>

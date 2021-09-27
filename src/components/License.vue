@@ -66,7 +66,7 @@ export default {
         valid_upto: function () {
             const valid = new Date(this.license.valid_upto)
             const today = new Date()
-            const diffTime = Math.abs(valid - today)
+            const diffTime = valid - today
             const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24))
             return diffDays
         },

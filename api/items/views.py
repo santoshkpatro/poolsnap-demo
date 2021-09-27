@@ -42,7 +42,12 @@ class ItemList(generics.ListCreateAPIView):
         serializer.save(owner=self.request.user)
 
 
-class ItemDetail(generics.RetrieveUpdateDestroyAPIView):
+class ItemDetail(generics.RetrieveAPIView):
+    serializer_class = ItemSerializer
+    queryset = Item.objects.all()
+
+
+class ItemUserDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = ItemSerializer
     queryset = Item.objects.all()
     permission_classes = [permissions.IsAuthenticated, IsOwnerOrReadOnly]
@@ -87,4 +92,4 @@ class ItemOwnerList(generics.ListAPIView):
 
     def get_queryset(self):
         items = super().get_queryset()
-        return items.filter(owner=self.request.user)
+        return items.filter(owner=self.request.user).order_by('created_at')

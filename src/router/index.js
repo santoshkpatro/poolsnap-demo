@@ -37,7 +37,29 @@ const routes = [
         path: '/license/:license_id',
         name: 'License',
         meta: { requiresAuth: true },
+        props: true,
         component: () => import('../views/License.vue'),
+    },
+    {
+        path: '/orders/:item_id/:type',
+        name: 'Orders',
+        meta: { requiresAuth: true },
+        props: true,
+        component: () => import('../views/orders/Orders.vue'),
+    },
+    {
+        path: '/orders/payment/success',
+        name: 'Success',
+        meta: { requiresAuth: true },
+        props: true,
+        component: () => import('../views/orders/Success.vue'),
+    },
+    {
+        path: '/orders/payment/:order_id',
+        name: 'Payment',
+        meta: { requiresAuth: true },
+        props: true,
+        component: () => import('../views/orders/Payment.vue'),
     },
     {
         path: '/inventory',
@@ -56,6 +78,13 @@ const routes = [
                 name: 'Licenses',
                 meta: { requiresAuth: true },
                 component: () => import('../views/inventory/Licenses.vue'),
+            },
+            {
+                path: 'orders/',
+                name: 'PreviousOrders',
+                meta: { requiresAuth: true },
+                component: () =>
+                    import('../views/inventory/PreviousOrders.vue'),
             },
         ],
     },

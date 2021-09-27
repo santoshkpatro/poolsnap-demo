@@ -9,4 +9,4 @@ class LicenceList(generics.ListAPIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def get_queryset(self):
-        return self.request.user.licenses.all()
+        return self.request.user.licenses.all().order_by('created_at')
