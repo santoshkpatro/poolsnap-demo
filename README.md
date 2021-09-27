@@ -34,13 +34,18 @@ Please enter information as per instruction
 python3 manage.py runserver
 ```
 
-### Step 6 - Start frontend server
+### Step 6 - Create a .env.local file in the root 
+```
+VUE_APP_API=HTTP://127.0.0.1:8000
+```
+
+### Step 7 - Start frontend server
 
 ```
 npm run serve
 ```
 
-### Step 7 - Now visit localhost:8080 [Click Here](http://localhost:8080/admin)
+### Step 8 - Now visit localhost:8080 [Click Here](http://localhost:8080/admin)
 
 2. For admin panel [Click Here](http://localhost:8000/admin)
 1. For backend [Click Here](http://localhost:8000)
