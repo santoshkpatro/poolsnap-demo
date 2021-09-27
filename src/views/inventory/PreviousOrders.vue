@@ -1,6 +1,5 @@
 <template>
-    <h1>Orders</h1>
-    <table class="table">
+    <table class="table mt-3">
         <thead>
             <tr>
                 <th scope="col">Transaction ID</th>

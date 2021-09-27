@@ -1,5 +1,5 @@
 <template>
-    <div class="row">
+    <div class="row mt-3">
         <div class="col-4" v-for="license in licenses" :key="license.id">
             <License :license="license" />
         </div>
