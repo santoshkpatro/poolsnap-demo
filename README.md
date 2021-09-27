@@ -20,7 +20,7 @@ npm install
 python3 manage.py migrate
 ```
 
-### Step 3 - Create a superuser/admin for accessing admin panel
+### Step 4 - Create a superuser/admin for accessing admin panel
 
 ```
 python3 manage.py createsuperuser
