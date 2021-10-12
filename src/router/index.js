@@ -28,6 +28,11 @@ const routes = [
         component: () => import('../views/auth/Login.vue'),
     },
     {
+        path: '/auth/register',
+        name: 'Register',
+        component: () => import('../views/auth/Register.vue'),
+    },
+    {
         path: '/upload',
         name: 'Upload',
         meta: { requiresAuth: true },

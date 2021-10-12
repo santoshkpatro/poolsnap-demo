@@ -9,14 +9,13 @@
                 height="57"
             /> -->
             <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-
             <div class="form-floating">
                 <input
                     type="text"
                     class="form-control"
                     id="floatingInput"
                     placeholder="name@example.com"
-                    v-model="credentials.username"
+                    v-model="formState.username"
                 />
                 <label for="floatingInput">username or email</label>
             </div>
@@ -26,7 +25,7 @@
                     class="form-control"
                     id="floatingPassword"
                     placeholder="Password"
-                    v-model="credentials.password"
+                    v-model="formState.password"
                 />
                 <label for="floatingPassword">password</label>
             </div>
@@ -41,25 +40,29 @@
 export default {
     data() {
         return {
-            credentials: {
+            formState: {
                 username: null,
                 password: null,
             },
-            error: null,
+            isLoading: false,
         }
     },
     methods: {
         handleLogin() {
+            this.isLoading = true
             this.$store
-                .dispatch('login', this.credentials)
+                .dispatch('login', this.formState)
                 .then(() => {
+                    this.isLoading = false
                     if (this.$route.query.redirect) {
                         this.$router.push(this.$route.query.redirect)
                     } else {
                         this.$router.push({ name: 'Home' })
                     }
                 })
-                .catch((err) => (this.error = err.response.data.error))
+                .catch((err) => {
+                    this.isLoading = false
+                })
         },
     },
 }

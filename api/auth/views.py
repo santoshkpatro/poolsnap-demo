@@ -17,4 +17,4 @@ def login_view(request):
         else:
             return Response(data={'detail': 'user not found'}, status=status.HTTP_404_NOT_FOUND)
     else:
-        return Response(data={'detail': 'email id or password entered in invalid'}, status=status.HTTP_401_UNAUTHORIZED)
+        return Response(data={'detail': 'email id or password entered in invalid'}, status=status.HTTP_404_NOT_FOUND)
